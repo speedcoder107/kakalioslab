@@ -1,0 +1,4 @@
+Log file for slow cooling up 480
+Created on 6/25/2024 7:26 PM
+~~~~~~~~~~
+2024.06.25 7:26 PM - Cond, ramping from 296.00K to 470.00K @ 5.00K/min using 100.00V (1rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\slow cooling up 480\COND\slow cooling up 480_2024.06.25_COND_FILE END.txt)
