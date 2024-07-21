@@ -1,0 +1,4 @@
+Log file for fast cooling at 470 at 20k per minute
+Created on 5/29/2024 11:51 AM
+~~~~~~~~~~
+2024.05.29 11:51 AM - Cond, ramping from 470.00K to 296.00K @ 10.00K/min using 100.00V (5rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cooling at 470 at 15k per minute\COND\fast cooling at 470 at 15k per minute_2024.05.29_COND_FILE END.txt)

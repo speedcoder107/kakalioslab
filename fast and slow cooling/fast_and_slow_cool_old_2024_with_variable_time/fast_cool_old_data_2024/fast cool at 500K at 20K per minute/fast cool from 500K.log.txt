@@ -1,0 +1,8 @@
+Log file for fast cool from 500K
+Created on 5/20/2024 4:34 PM
+~~~~~~~~~~
+2024.05.20 4:34 PM - Cond, ramping from 500.00K to 296.00K @ 10.00K/min using 100.00V (10rdgs, 1.00K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cool from 500K\COND\fast cool from 500K_2024.05.20_COND_FILE END.txt)
+2024.05.20 4:35 PM - Cond, ramping from 495.00K to 296.00K @ 10.00K/min using 100.00V (10rdgs, 1.00K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cool from 500K\COND\fast cool from 500K_2024.05.20_COND_FILE END.txt)
+2024.05.20 4:39 PM - Cond, ramping from 495.00K to 296.00K @ 10.00K/min using 100.00V (10rdgs, 1.00K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cool from 500K\COND\fast cool from 500K_2024.05.20_COND_FILE END.txt)
+2024.05.20 4:47 PM - Cond, ramping from 440.20K to 296.00K @ 10.00K/min using 100.00V (5rdgs, 1.00K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cool from 500K\COND\fast cool from 500K_2024.05.20_COND_FILE END.txt)
+2024.05.20 4:49 PM - Cond, ramping from 440.20K to 296.00K @ 10.00K/min using 100.00V (30rdgs, 1.00K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cool from 500K\COND\fast cool from 500K_2024.05.20_COND_FILE END.txt)

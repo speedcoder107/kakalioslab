@@ -1,0 +1,10 @@
+Log file for fast cooling at 480K at 20k per minute
+Created on 5/31/2024 10:18 AM
+~~~~~~~~~~
+2024.05.31 10:18 AM - Cond, ramping from 480.00K to 296.00K @ 20.00K/min using 100.00V (5rdgs, 0.10K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cooling at 480K at 20k per minute\COND\fast cooling at 480K at 20k per minute_2024.05.31_COND_FILE END.txt)
+2024.05.31 10:19 AM - Cond, ramping from 480.00K to 296.00K @ 20.00K/min using 100.00V (5rdgs, 0.10K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cooling at 480K at 20k per minute\COND\fast cooling at 480K at 20k per minute_2024.05.31_COND_FILE END.txt)
+2024.05.31 10:55 AM - Cond, ramping from 400.00K to 4820.00K @ 15.00K/min using 100.00V (5rdgs, 0.10K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cooling at 480K at 20k per minute\COND\fast cooling at 480K at 20k per minute_2024.05.31_COND_FILE END.txt)
+2024.05.31 11:30 AM - Cond, ramping from 480.00K to 296.00K @ 15.00K/min using 100.00V (5rdgs, 0.10K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cooling at 480K at 20k per minute\COND\fast cooling at 480K at 20k per minute_2024.05.31_COND_FILE END.txt)
+2024.06.04 9:27 AM - Cond, ramping from 480.00K to 296.00K @ 1.00K/min using 100.00V (5rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cooling at 480K at 20k per minute\COND\fast cooling at 480K at 20k per minute_2024.06.04_COND_FILE END.txt)
+2024.06.10 12:49 PM - Cond, ramping from 480.00K to 296.00K @ 20.00K/min using 100.00V (5rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cooling at 480K at 20k per minute\COND\fast cooling at 480K at 20k per minute_2024.06.10_COND_FILE END.txt)
+2024.06.18 9:07 AM - Cond, ramping from 480.00K to 296.00K @ 20.00K/min using 100.00V (1rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cooling at 480K at 20k per minute\COND\fast cooling at 480K at 20k per minute_2024.06.18_COND_FILE END.txt)

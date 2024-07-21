@@ -1,0 +1,4 @@
+Log file for slow cooling at 450K at 1k per minute
+Created on 5/29/2024 4:27 PM
+~~~~~~~~~~
+2024.05.29 4:27 PM - Cond, ramping from 450.00K to 296.00K @ 1.00K/min using 100.00V (5rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\slow cooling at 450K at 1k per minute\COND\slow cooling at 450K at 1k per minute_2024.05.29_COND_FILE END.txt)

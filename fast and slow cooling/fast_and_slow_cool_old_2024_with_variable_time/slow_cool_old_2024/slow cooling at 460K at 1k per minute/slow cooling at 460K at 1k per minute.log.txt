@@ -1,0 +1,7 @@
+Log file for slow cooling at 460K at 1k per minute
+Created on 6/1/2024 1:58 PM
+~~~~~~~~~~
+2024.06.01 1:58 PM - Cond, ramping from 460.00K to 296.00K @ 1.00K/min using 100.00V (5rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\slow cooling at 460K at 1k per minute\COND\slow cooling at 460K at 1k per minute_2024.06.01_COND_FILE END.txt)
+2024.06.04 10:05 AM - Cond, ramping from 460.00K to 296.00K @ 1.00K/min using 100.00V (5rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\slow cooling at 460K at 1k per minute\COND\slow cooling at 460K at 1k per minute_2024.06.04_COND_FILE END.txt)
+2024.06.04 10:08 AM - Cond, ramping from 460.00K to 296.00K @ 1.00K/min using 100.00V (5rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\slow cooling at 460K at 1k per minute\COND\slow cooling at 460K at 1k per minute_2024.06.04_COND_FILE END.txt)
+2024.06.10 1:39 PM - Cond, ramping from 460.00K to 296.00K @ 1.00K/min using 100.00V (5rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\slow cooling at 460K at 1k per minute\COND\slow cooling at 460K at 1k per minute_2024.06.10_COND_FILE END.txt)

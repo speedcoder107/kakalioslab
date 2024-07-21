@@ -1,0 +1,4 @@
+Log file for slow cool at 490
+Created on 5/24/2024 3:02 PM
+~~~~~~~~~~
+2024.05.24 3:02 PM - Cond, ramping from 490.00K to 296.00K @ 1.00K/min using 100.00V (5rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\slow cool at 490\COND\slow cool at 490_2024.05.24_COND_FILE END.txt)

@@ -1,0 +1,21 @@
+5/20/2024
+4:49 PM
+fast cool from 500K_2024.05.20_COND_FILE END.txt
+
+Data taken by: Akshat Sharma
+ammeter is Keithley 6517A at GPIB0::27::INSTR
+voltage source is Keithley 6517A at GPIB0::27::INSTR
+temperature controller is Lake Shore 330 at GPIB0::12::INSTR with the settings: control sensor=A;sample sensor=;loop=1
+Readings: 30
+Voltage (V): 100
+Geo Factor: 1000
+Ea Window (pts): 5
+Shut off V when done?: TRUE
+Mconnect?: TRUE
+Use Abs(Cond)?: TRUE
+Rate (K/min): 10
+Heater: Off
+DESCRIPTION
+********************
+Time (s)	Temperature (K)	1/kT (1/eV)	Rate (K/min)	Current (A)	Current Std Dev/Mean	Conductivity (Ohm-cm)^-1	Ea (eV)	Reduced Ea	
+2.885800E+1	3.230300E+2	3.589140E+1	NaN	2.904677E-6	7.283745E-1	2.904677E-5	NaN	NaN

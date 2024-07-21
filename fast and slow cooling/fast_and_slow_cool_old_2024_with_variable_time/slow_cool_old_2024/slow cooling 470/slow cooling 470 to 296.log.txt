@@ -1,0 +1,5 @@
+Log file for slow cooling 470 to 296
+Created on 4/29/2024 4:06 PM
+~~~~~~~~~~
+2024.04.29 4:06 PM - Cond, ramping from 470.00K to 296.00K @ 0.50K/min using 100.00V (350rdgs, 1.00K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\slow cooling 470 to 296\COND\slow cooling 470 to 296_2024.04.29_COND_FILE END.txt)
+2024.04.29 5:39 PM - Cond, ramping from 470.00K to 296.00K @ 0.50K/min using 100.00V (5rdgs, 1.00K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\slow cooling 470 to 296\COND\slow cooling 470 to 296_2024.04.29_COND_FILE END.txt)

@@ -1,0 +1,5 @@
+Log file for slow cooling again at 0.05k per min
+Created on 5/7/2024 6:37 PM
+~~~~~~~~~~
+2024.05.07 6:37 PM - Cond, ramping from 470.00K to 296.00K @ 0.05K/min using 100.00V (20rdgs, 1.00K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\slow cooling again at 0.05k per min\COND\slow cooling again at 0.05k per min_2024.05.07_COND_FILE END.txt)
+2024.05.07 6:48 PM - Cond, ramping from 470.00K to 296.00K @ 0.05K/min using 100.00V (20rdgs, 1.00K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\slow cooling again at 0.05k per min\COND\slow cooling again at 0.05k per min_2024.05.07_COND_FILE END.txt)
