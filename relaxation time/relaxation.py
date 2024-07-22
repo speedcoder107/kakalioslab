@@ -159,7 +159,6 @@ def scatter_plot(title, x_column, y_column, new_column: dict[scatter_data, scatt
     plt.grid(True, which='both', linestyle='--', linewidth=0.5)
     plt.title(title)
 
-    # Show the plot
     plt.show()
 
 def display_dataframe(data_frame):
@@ -422,7 +421,6 @@ def linear_fit(dataframe, x_column, y_column, temp):
     plt.ylabel(y_column)
     plt.legend()
     plt.title(f'Linear Fit: {y_column} vs {x_column}')
-
     plt.show()
 
     return slope, intercept
