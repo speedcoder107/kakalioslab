@@ -13,7 +13,7 @@ class ParallelLinesError(Exception):
         self.message = message
         super().__init__(self.message)
 
-def same_line_finder(d_slow, d_fast, err_lim = 0.01, forgiveness_num = 20):
+def same_line_finder(d_slow, d_fast, err_lim = 0.01, forgiveness_num = 30):
     len_list_slow = len(d_slow["Temperature (K)"]) - 1
     len_list_fast = len(d_fast["Temperature (K)"]) - 1
     if len_list_fast>len_list_slow:
@@ -28,7 +28,7 @@ def same_line_finder(d_slow, d_fast, err_lim = 0.01, forgiveness_num = 20):
     else:
          trend = "up"
          i = len_list
-            
+    # print(trend)
 
     while np.abs(err_cond) < err_lim:
 
@@ -38,11 +38,10 @@ def same_line_finder(d_slow, d_fast, err_lim = 0.01, forgiveness_num = 20):
 
         last_temp_slow = last_row_slow['Temperature (K)']
 
-        last_cond_fast = np.log(last_row_fast['Conductivity (Ohm-cm)^-1'])
-        last_cond_slow = np.log(last_row_slow['Conductivity (Ohm-cm)^-1'])
+        last_cond_fast = np.abs(np.log(last_row_fast['Conductivity (Ohm-cm)^-1']))
+        last_cond_slow = np.abs(np.log(last_row_slow['Conductivity (Ohm-cm)^-1']))
 
         err_cond = abs(last_cond_fast - last_cond_slow)
-        # print(err_cond)
         
         if trend == 'down':
             i+=1
@@ -60,10 +59,11 @@ def same_line_finder(d_slow, d_fast, err_lim = 0.01, forgiveness_num = 20):
 
                 forgive_temp_slow = forgive_row_slow['Temperature (K)']
 
-                forgive_cond_fast = np.log(forgive_row_fast['Conductivity (Ohm-cm)^-1'])
-                forgive_cond_slow = np.log(forgive_row_slow['Conductivity (Ohm-cm)^-1'])
+                forgive_cond_fast = np.abs(np.log(forgive_row_fast['Conductivity (Ohm-cm)^-1']))
+                forgive_cond_slow = np.abs(np.log(forgive_row_slow['Conductivity (Ohm-cm)^-1']))
 
-                forgive_err_cond = forgive_cond_fast - forgive_cond_slow
+                forgive_err_cond = np.abs(forgive_cond_fast - forgive_cond_slow)
+
 
                 if abs(forgive_err_cond) < err_lim:
                     err_cond = forgive_err_cond
@@ -95,7 +95,7 @@ def contains_up_or_down(input_string):
 
 
 
-def game(slow_file_name, fast_file_name, temp):
+def game(slow_file_name, fast_file_name, temp, err_lim_same_line, forgiveness_num_same_line):
     d_slow = pd.read_csv(slow_file_name)
     d_fast = pd.read_csv(fast_file_name)
 
@@ -107,7 +107,7 @@ def game(slow_file_name, fast_file_name, temp):
     cond_fast = d_fast['Conductivity (Ohm-cm)^-1'] 
     thousand_over_temp_fast = 1000/d_fast['Temperature (K)']
 
-    R1_end_slow, R1_end_fast = same_line_finder(d_slow, d_fast)
+    R1_end_slow, R1_end_fast = same_line_finder(d_slow, d_fast, err_lim=err_lim_same_line, forgiveness_num=forgiveness_num_same_line)
 
     eq_temp = 1000/thousand_over_temp_slow[R1_end_slow-1]
 
@@ -120,12 +120,12 @@ def game(slow_file_name, fast_file_name, temp):
     R1_intercept_slow = R1_coefficients_slow[1]  # Intercept
     R1_fit_line_slow = np.exp(R1_slope_slow * x + R1_intercept_slow)
 
-    # R1_cond_fast = cond_fast[:R1_end_fast] 
-    # R1_thousand_over_temp_fast = thousand_over_temp_fast[:R1_end_fast]
-    # R1_coefficients_fast = np.polyfit(R1_thousand_over_temp_fast, np.log(R1_cond_fast), 1)
-    # R1_slope_fast = R1_coefficients_fast[0]  # Slope
-    # R1_intercept_fast = R1_coefficients_fast[1]  # Intercept
-    # R1_fit_line_fast = np.exp(R1_slope_fast * x + R1_intercept_fast)
+    R1_cond_fast = cond_fast[:R1_end_fast] 
+    R1_thousand_over_temp_fast = thousand_over_temp_fast[:R1_end_fast]
+    R1_coefficients_fast = np.polyfit(R1_thousand_over_temp_fast, np.log(R1_cond_fast), 1)
+    R1_slope_fast = R1_coefficients_fast[0]  # Slope
+    R1_intercept_fast = R1_coefficients_fast[1]  # Intercept
+    R1_fit_line_fast = np.exp(R1_slope_fast * x + R1_intercept_fast)
 
     # generally the slope is very similar for both slow and fast but for R1 region, I am using slow slope as default.
     R1_activation = - R1_slope_slow * 1000 * c.physical_constants['Boltzmann constant in eV/K'][0]
@@ -177,17 +177,25 @@ def game(slow_file_name, fast_file_name, temp):
     answer_dict["cond_slow"] = cond_slow
     answer_dict["cond_fast"] = cond_fast
     answer_dict["R1_fit_line_slow"] = R1_fit_line_slow
-    # answer_dict["R1_fit_line_fast"] = R1_fit_line_fast
+    answer_dict["R1_slope_slow"] = R1_slope_slow
+    answer_dict["R1_fit_line_fast"] = R1_fit_line_fast
     answer_dict["R2_fit_line_slow"] = R2_fit_line_slow
     answer_dict["R2_fit_line_fast"] = R2_fit_line_fast
+    answer_dict["R2_slope_slow"] = R2_slope_slow
+    answer_dict["R2_slope_fast"] = R2_slope_fast
     answer_dict["R1_intercept_slow"] = R1_intercept_slow
-    # answer_dict["R1_intercept_fast"] = R1_intercept_fast
+    answer_dict["R1_intercept_fast"] = R1_intercept_fast
     answer_dict["R2_intercept_slow"] = R2_intercept_slow
     answer_dict["R2_intercept_fast"] = R2_intercept_fast
     answer_dict["fictive_temp_slow"] = fictive_temp_slow
     answer_dict["fictive_temp_fast"] = fictive_temp_fast
     answer_dict["pt_slow_x"] = pt_slow_x
     answer_dict["pt_fast_x"] = pt_fast_x
+    answer_dict["pt_slow_y"] = pt_slow_y
+    answer_dict["pt_fast_y"] = pt_fast_y
+    answer_dict["eq_temp"] = 1000/thousand_over_temp_slow[R1_end_slow-1]
+    answer_dict["fictive_temp_fast"] = fictive_temp_fast
+    answer_dict["fictive_temp_slow"] = fictive_temp_slow
     return answer_dict
     
     
