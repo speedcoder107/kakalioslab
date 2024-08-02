@@ -383,7 +383,7 @@ def ln(dataframe, column):
     return dataframe
 
 
-def linear_fit(dataframe, x_column, y_column, temp):
+def linear_fit(dataframe, x_column, y_column, temp, begin_rm, end_rm):
     """
     Performs a linear fit on specified columns of a DataFrame, removes rows with NaN or infinite values, and plots the original data along with the linear fit.
 
@@ -411,21 +411,22 @@ def linear_fit(dataframe, x_column, y_column, temp):
     y = clean_data[y_column].values
 
     # Use numpy's polyfit to find the coefficients of the linear fit (degree=1)
-    slope, intercept = np.polyfit(x, y, 1)
+    slope, intercept = np.polyfit(x[begin_rm : (len(x) - end_rm + 1)], y[begin_rm : (len(x) - end_rm + 1)], 1)
 
     # Plot the original data and the linear fit
     plt.scatter(x, y, label=f'Data at {temp:.2f} K')
-    plt.plot(x, slope * x + intercept, color='red', label=f'Fit: y = {slope:.2f} x + {intercept:.2f}')
+    plt.plot(x[begin_rm : (len(x) - end_rm + 1)], slope * x[begin_rm : (len(x) - end_rm + 1)] + intercept, color='red', label=f'Fit: y = {slope:.2f} x + {intercept:.2f}')
     
     plt.xlabel(x_column)
     plt.ylabel(y_column)
     plt.legend()
     plt.title(f'Linear Fit: {y_column} vs {x_column}')
+
     plt.show()
 
     return slope, intercept
 
-def berthelot_prediction(data_frame):
+def berthelot_prediction(data_frame, begin_rm = 0, end_rm = 0):
     """
     Finds the value of kappa and tau using the berthelot process. Also plots the values.
 
@@ -439,12 +440,12 @@ def berthelot_prediction(data_frame):
         data_frame = data_frame.copy(deep=True)
         ln(absolute(ln(dataframe=data_frame, column='Delta_T'),column='ln_Delta_T'), column='abs_ln_Delta_T')
         ln(dataframe=data_frame, column='Time_(s)')
-        slope, intercept = linear_fit(dataframe=data_frame, x_column='ln_Time_(s)',y_column='ln_abs_ln_Delta_T', temp = round(data_frame.at[0, 'Sample_Temperature_(K)']))
+        slope, intercept = linear_fit(dataframe=data_frame, x_column='ln_Time_(s)',y_column='ln_abs_ln_Delta_T', temp = round(data_frame.at[0, 'Sample_Temperature_(K)']), begin_rm=begin_rm, end_rm=end_rm)
         kappa = slope
         tau = math.exp(intercept/(-slope))
         return kappa, tau
 
-def dispersive_diffusion_prediction(data_frame):
+def dispersive_diffusion_prediction(data_frame, begin_rm = 0, end_rm = 0):
     """
     Finds the value of kappa and tau using the berthelot process. Also plots the values.
 
@@ -460,11 +461,11 @@ def dispersive_diffusion_prediction(data_frame):
         absolute(dataframe=data_frame, column='(1/Delta_-_1)')
         ln(dataframe=data_frame, column='abs_(1/Delta_-_1)')
         ln(dataframe=data_frame, column='Time_(s)')
-        slope, intercept = linear_fit(dataframe=data_frame, x_column='ln_Time_(s)',y_column='ln_abs_(1/Delta_-_1)', temp = round(data_frame.at[0, 'Sample_Temperature_(K)']))
+        slope, intercept = linear_fit(dataframe=data_frame, x_column='ln_Time_(s)',y_column='ln_abs_(1/Delta_-_1)', temp = round(data_frame.at[0, 'Sample_Temperature_(K)']), begin_rm=begin_rm, end_rm=end_rm)
         gamma = slope
         tau =  math.exp(- intercept/gamma)
         return gamma, tau
-
+    
 def rewrite_column_names(file):
     """
     Reads a CSV file using pandas, renames specific columns, and writes the modified DataFrame into the same CSV file.

@@ -13,22 +13,9 @@ class ParallelLinesError(Exception):
         self.message = message
         super().__init__(self.message)
 
-def same_line_finder(d_slow, d_fast, err_lim = 0.01, forgiveness_num = 30):
-    len_list_slow = len(d_slow["Temperature (K)"]) - 1
-    len_list_fast = len(d_fast["Temperature (K)"]) - 1
-    if len_list_fast>len_list_slow:
-        len_list = len_list_slow
-    else:
-        len_list = len_list_fast
-        
+def same_line_finder(d_slow, d_fast, err_lim = 0.01, forgiveness_num = 8):
     err_cond = 0
-    if d_slow['Temperature (K)'][0] - d_slow["Temperature (K)"][len_list] > 0:
-            trend = "down"
-            i = 0
-    else:
-         trend = "up"
-         i = len_list
-    # print(trend)
+    i = 0
 
     while np.abs(err_cond) < err_lim:
 
@@ -38,32 +25,25 @@ def same_line_finder(d_slow, d_fast, err_lim = 0.01, forgiveness_num = 30):
 
         last_temp_slow = last_row_slow['Temperature (K)']
 
-        last_cond_fast = np.abs(np.log(last_row_fast['Conductivity (Ohm-cm)^-1']))
-        last_cond_slow = np.abs(np.log(last_row_slow['Conductivity (Ohm-cm)^-1']))
+        last_cond_fast = np.log(last_row_fast['Conductivity (Ohm-cm)^-1'])
+        last_cond_slow = np.log(last_row_slow['Conductivity (Ohm-cm)^-1'])
 
         err_cond = abs(last_cond_fast - last_cond_slow)
-        
-        if trend == 'down':
-            i+=1
-        else:
-            i-=1
+
+        i+=1
         if np.abs(err_cond) > err_lim:
             for forgiveness_factor in range(forgiveness_num):
-                if trend == 'down':
-                    forgive_row_fast = d_fast.loc[i + forgiveness_factor]
-                else:
-                    forgive_row_fast = d_fast.loc[i - forgiveness_factor]
-
+                forgive_row_fast = d_fast.loc[forgiveness_factor + i]
                 forgive_temp_fast = forgive_row_fast['Temperature (K)']
                 forgive_row_slow = d_slow.iloc[(d_slow['Temperature (K)'] - forgive_temp_fast).abs().argmin()]    
 
                 forgive_temp_slow = forgive_row_slow['Temperature (K)']
 
-                forgive_cond_fast = np.abs(np.log(forgive_row_fast['Conductivity (Ohm-cm)^-1']))
-                forgive_cond_slow = np.abs(np.log(forgive_row_slow['Conductivity (Ohm-cm)^-1']))
+                forgive_cond_fast = np.log(forgive_row_fast['Conductivity (Ohm-cm)^-1'])
+                forgive_cond_slow = np.log(forgive_row_slow['Conductivity (Ohm-cm)^-1'])
 
-                forgive_err_cond = np.abs(forgive_cond_fast - forgive_cond_slow)
-
+                forgive_err_cond = forgive_cond_fast - forgive_cond_slow
+                # print("a", forgive_err_cond)
 
                 if abs(forgive_err_cond) < err_lim:
                     err_cond = forgive_err_cond
