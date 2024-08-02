@@ -1,0 +1,10 @@
+Log file for fast cool down 460
+Created on 7/23/2024 7:35 PM
+~~~~~~~~~~
+2024.07.23 7:35 PM - Cond, ramping from 460.00K to 296.00K @ 20.00K/min using 100.00V (5rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cool down 460\COND\fast cool down 460_2024.07.23_COND_FILE END.txt)
+2024.07.24 12:30 PM - Cond, ramping from 460.00K to 296.00K @ 20.00K/min using 100.00V (5rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cool down 460\COND\fast cool down 460_2024.07.24_COND_FILE END.txt)
+2024.07.24 12:32 PM - Cond, ramping from 460.00K to 296.00K @ 20.00K/min using 100.00V (5rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cool down 460\COND\fast cool down 460_2024.07.24_COND_FILE END.txt)
+2024.07.24 12:36 PM - Cond, ramping from 460.00K to 296.00K @ 20.00K/min using 100.00V (1rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cool down 460\COND\fast cool down 460_2024.07.24_COND_FILE END.txt)
+2024.07.24 4:05 PM - Cond, ramping from 460.00K to 296.00K @ 20.00K/min using 100.00V (1rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cool down 460\COND\fast cool down 460_2024.07.24_COND_FILE END.txt)
+2024.07.24 4:08 PM - Cond, ramping from 460.00K to 296.00K @ 20.00K/min using 100.00V (1rdgs, 0.20K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cool down 460\COND\fast cool down 460_2024.07.24_COND_FILE END.txt)
+2024.07.24 4:41 PM - Cond, ramping from 460.00K to 296.00K @ 1.00K/min using 100.00V (1rdgs, 1.00K rdg spacing) (\\rds01.storage.umn.edu\cse_spa_dis\Akshat_S\Data\fast cool down 460\COND\fast cool down 460_2024.07.24_COND_FILE END.txt)
