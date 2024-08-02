@@ -158,6 +158,7 @@ def game(slow_file_name, fast_file_name, temp, err_lim_same_line, forgiveness_nu
     answer_dict["cond_fast"] = cond_fast
     answer_dict["R1_fit_line_slow"] = R1_fit_line_slow
     answer_dict["R1_slope_slow"] = R1_slope_slow
+    answer_dict["R1_slope_fast"] = R1_slope_fast
     answer_dict["R1_fit_line_fast"] = R1_fit_line_fast
     answer_dict["R2_fit_line_slow"] = R2_fit_line_slow
     answer_dict["R2_fit_line_fast"] = R2_fit_line_fast
